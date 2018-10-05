@@ -1,0 +1,381 @@
+/* reset browser styles */
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	z-index: 0;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+	display: block;
+	z-index: 0;
+}
+
+body {
+	line-height: 1.2;
+}
+
+ol {
+	list-style: decimal;
+}
+
+ul {
+	list-style: square;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* end reset browser styles */
+
+
+
+html {
+	height: 100%;
+	width: 100%;
+	display: table;
+}
+
+body {
+	display: table-cell;
+	min-height: 100%;
+	width: 100%;
+	font-family: 'Lato', sans-serif;
+	background-color: #ecf0f1;
+}
+
+header {
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	background-color: #2c3e50;
+	color: white;
+	z-index: 10;
+}
+
+
+header a {
+	color: white;
+	text-decoration: none;
+
+}
+
+.container {
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+nav.container {
+	background-color: #2c3e50;
+	height: 60px;
+}
+
+main.container {
+	background-color: white;
+	margin-top: 60px;
+	padding-top: 15px;
+	min-height: 100%;
+}
+
+.brand {
+	font-family: 'Arial', monospace;
+	font-size: 40px;
+	font-weight: 700;
+	padding: 0;
+	float: left;
+	line-height: 60px;
+}
+
+.menu {
+	display: block;
+}
+
+.mainMenu {
+	float: left;
+	margin-left: 20px;
+
+}
+
+.loginMenu {
+	float: right;
+
+}
+
+.menu-item {
+	list-style-type: none;
+	display: inline-block;
+	line-height: 60px;
+}
+
+
+.sub-menu {
+	position: absolute;
+	background-color: #f1f1f1;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	text-align: center;
+}
+
+.sub-menu .menu-item {
+	display: block;
+	line-height: 40px;
+	background-color: #f1f1f1;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+.menu-item:hover {
+	background-color: #00b8e6;
+	z-index: -1000;
+}
+
+.sub-menu .menu-item a {
+	color: #2c3e50;
+}
+
+.sub-menu .menu-item a:hover {
+	color: white;
+}
+
+li.menu-item a {
+	padding: 8px;
+}
+
+.sub-menu-level2 {
+	transform: translateY(-100px);
+	opacity: 0;
+	visibility: hidden;
+	transition: all 0.5s ease;
+	z-index: -10;
+}
+
+.menu-item:hover .sub-menu-level2 {
+	transform: translateY(0%);
+	opacity: 1;
+	visibility: visible;
+
+}
+
+.sub-menu-level3 {
+	position: relative;
+	height: 0px;
+	transform: translateY(-50px);
+	left: 0;
+	visibility: hidden;
+	opacity: 0;
+	z-index: -15;
+	transition: all 0.5s ease;
+	white-space: nowrap;
+}
+
+.sub-menu-level3 .menu-item {
+	height: 40px;
+}
+
+
+.sub-menu-level2 .menu-item:hover .sub-menu-level3 {
+	visibility: visible;
+	opacity: 1;
+	left: 90%;
+	z-index: 0;
+}
+
+
+/*----------------RWD----------------*/
+
+@media (max-width: 576px) {
+
+	.container {
+		max-width: 100%;
+		padding: 0;
+	}
+
+	.menu {
+		width: 100%;
+		position: relative;
+	}
+
+	.mainMenu {
+		margin-left: 0;
+	}
+
+	.loginMenu {
+		z-index: 0;
+	}
+
+	.brand {
+		margin-left: 15px;
+	}
+
+	.menu-item {
+		width: 100%;
+		display: block;
+		position: relative;
+	}
+
+	.sub-menu {
+		position: relative;
+		width: 100%;
+	}
+
+	.sub-menu-level2 {
+		display: none;
+		transform: none;
+	}
+
+	.sub-menu-level3 {
+		display: none;
+		white-space: nowrap;
+		left: 0;
+		transform: none;
+		transition: none;
+		position: relative;
+		height: 100%;
+		
+	}
+
+	.menu-item:hover .sub-menu-level2 {
+		display: block;
+		transform: none;
+	}
+	
+	
+	.sub-menu-level2 .menu-item:hover .sub-menu-level3 {
+		display: block;
+		left: 0;
+		transform: none;
+		position: relative;
+/*		visibility: visible;*/
+/*		height: 100%;*/
+		
+			visibility: visible;
+	opacity: 1;
+	left: 0;
+	height: 100%
+		
+	}
+
+
+	li.menu-item a {
+		margin-left: 5px;
+		margin-right: 5px;
+	}
+
+
+/*--------------------------	*/
+
+
+}
+
+@media (min-width: 768px) {
+	.container {
+		max-width: 720px;
+
+	}
+}
+
+@media (min-width: 992px) {
+	.container {
+		max-width: 960px;
+	}
+}
+
+@media (min-width: 1200px) {
+	.container {
+		max-width: 1140px;
+	}
+}
