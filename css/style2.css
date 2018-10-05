@@ -217,7 +217,7 @@ main.container {
 
 .menu-item:hover {
 	background-color: #00b8e6;
-	z-index: -1000;
+/*	z-index: -100;*/
 }
 
 .sub-menu .menu-item a {
@@ -244,9 +244,7 @@ li.menu-item a {
 	transform: translateY(0%);
 	opacity: 1;
 	visibility: visible;
-
 }
-
 .sub-menu-level3 {
 	position: relative;
 	height: 0px;
@@ -262,7 +260,6 @@ li.menu-item a {
 .sub-menu-level3 .menu-item {
 	height: 40px;
 }
-
 
 .sub-menu-level2 .menu-item:hover .sub-menu-level3 {
 	visibility: visible;
